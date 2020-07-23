@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+    <ion-title size="large" >Add Customer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input  autocapitalize inputmode="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contact Number</ion-label>
+        <ion-input  autocapitalize inputmode="text" formControlName="contactNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input  autocapitalize inputmode="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-input inputmode="text" autocapitalize formControlName="address"></ion-input>
+      </ion-item>
+      <ion-button [disabled]="!customerForm.valid" type="submit" expand="block">Submit
+        <ion-icon slot="end" name="create Customer">
+      </ion-icon>
+    </ion-button>
+    </ion-list>
+  </form>
+</ion-content>
