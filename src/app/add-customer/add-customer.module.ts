@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { AddCustomerPageRoutingModule } from './add-customer-routing.module';
-
 import { AddCustomerPage } from './add-customer.page';
 
-@NgModule({
+@NgModule( {
   imports: [
     CommonModule,
     FormsModule,
@@ -16,7 +13,7 @@ import { AddCustomerPage } from './add-customer.page';
     IonicModule,
     AddCustomerPageRoutingModule
   ],
-  declarations: [AddCustomerPage],
-  providers:[FormBuilder]
-})
-export class AddCustomerPageModule {}
+  declarations: [ AddCustomerPage ],
+  providers: [ FormBuilder ]
+} )
+export class AddCustomerPageModule { }
