@@ -21,7 +21,9 @@ export class AddCustomerPage implements OnInit {
     this.customerForm = this.fb.group( {
       name: [ '', Validators.required ],
       contactNumber: [ '', Validators.required ],
-      email: [ '', Validators.required ],
+      email: [ '', [
+        Validators.required,
+        Validators.pattern( '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' ) ] ],
       address: [ '' ]
     } );
   }
@@ -37,7 +39,7 @@ export class AddCustomerPage implements OnInit {
     },
       error => {
         console.log( error );
-      } )
+      } );
   }
 
 }
