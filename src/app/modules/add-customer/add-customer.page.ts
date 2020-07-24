@@ -11,6 +11,13 @@ import { CustomerService } from '../../core/services/customer.service';
 export class AddCustomerPage implements OnInit {
   customerForm: FormGroup;
   constructor( private customerService: CustomerService, private fb: FormBuilder, private router: Router ) {
+
+  }
+
+  ngOnInit() {
+    this.InitializeForm();
+  }
+  InitializeForm() {
     this.customerForm = this.fb.group( {
       name: [ '', Validators.required ],
       contactNumber: [ '', Validators.required ],
@@ -19,14 +26,13 @@ export class AddCustomerPage implements OnInit {
     } );
   }
 
-  ngOnInit() {
-  }
   onSubmit() {
     this.addNewCustomer();
   }
   addNewCustomer() {
     this.customerService.AddNewCustomer( this.customerForm.value ).subscribe( () => {
       alert( 'Customer added sucessfully' );
+      this.InitializeForm();
       this.router.navigate( [ '' ] );
     },
       error => {
