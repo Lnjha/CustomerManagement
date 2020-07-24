@@ -7,7 +7,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchByNamePipe } from './pipes/search-by-name.pipe';
 
 @NgModule( {
   declarations: [ AppComponent],

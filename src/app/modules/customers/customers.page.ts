@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from '../services/customer.service';
-import { ICustomer } from '../contracts/icustomer';
+import { CustomerService } from '../../core/services/customer.service';
+import { ICustomer } from '../../core/contracts/icustomer';
 
 @Component( {
   selector: 'app-customers',
